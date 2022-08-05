@@ -1,0 +1,156 @@
+/*----------------- GOOGLE FONTS -----------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+/*----------------- VARIABLES --------------------*/
+:root{
+  /* FONT */
+  --font: 'Poppins', sans-serif;
+
+  /* COLORS */
+  --color: #9176FF;
+  --second-color: #FFDE59;
+}
+
+/*----------------- BASE ------------------------*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: var(--font);
+}
+
+ul,
+li,
+a{
+  text-decoration: none;
+  list-style: none;
+}
+
+/*----------------- NAV -------------------------*/
+.nav{
+  background-color: var(--color);
+  height: 5rem;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 5px 10px rgba(0,0,0, .1);
+}
+
+.nav__logo{
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-left: 0.5em;
+}
+
+.nav__hamburger{
+  color: #fff;
+  font-size: 2rem;
+  margin-right: 0.5em;
+
+}
+
+.nav__links{
+  position: fixed;
+  top: 5rem;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0, .5);
+  padding-top: 2em;
+
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+
+  transition: all .4s ease-out;
+}
+
+.nav__link{
+  font-size: 1.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 1em 0;
+}
+
+.nav__link a{
+  color: #fff;
+}
+
+.nav__link a:hover{
+  cursor: pointer;
+  color: var(--second-color);
+}
+
+#check:checked ~ .nav__links{
+  right: 0;
+}
+
+#check{
+  display: none;
+}
+
+
+/* ---------------- MEDIA ----------------------- */
+@media (min-width: 768px){
+
+  .nav{
+    height: 6rem;
+  }
+
+  .nav__logo{
+    font-size: 2.5rem;
+  }
+
+  .nav__links{
+    position: static;
+    background-color: transparent;
+    max-width: 50%;
+    padding: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+
+    transition: none;
+  }
+
+  .nav__hamburger{
+    display: none;
+  }
+
+  .nav__link{
+    margin-right: 0.75em;
+  }
+
+  .nav__link a{
+    font-size: 1.25rem;
+    padding: 0.4em;
+    border-radius: 1em;
+    transition: all .3s ease;
+  }
+
+  .nav__link:hover a{
+    background-color: #fff;
+    color: var(--color);
+  }
+}
+
+@media (min-width: 1024px){
+
+  .nav__logo{
+    font-size: 3rem;
+  }
+
+  .nav__link a{
+    font-size: 1.4rem;
+  }
+}
